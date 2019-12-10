@@ -19,15 +19,6 @@ namespace AnagramFinder {
             InitializeComponent();
         }
 
-        private void открытьТекстToolStripMenuItem_Click(object sender, EventArgs e) {
-            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
-            // получаем выбранный файл
-            string filename = openFileDialog1.FileName;
-            // читаем файл в строку
-            textBox1.Text = System.IO.File.ReadAllText(filename, Encoding.Default);
-        }
-
         private void открытьСловарьToolStripMenuItem_Click(object sender, EventArgs e) {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;

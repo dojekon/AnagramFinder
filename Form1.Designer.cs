@@ -26,7 +26,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.открытьТекстToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьСловарьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -57,7 +56,6 @@
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьТекстToolStripMenuItem,
             this.открытьСловарьToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -65,17 +63,10 @@
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(59, 24);
             this.toolStripDropDownButton1.Text = "Файл";
             // 
-            // открытьТекстToolStripMenuItem
-            // 
-            this.открытьТекстToolStripMenuItem.Name = "открытьТекстToolStripMenuItem";
-            this.открытьТекстToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.открытьТекстToolStripMenuItem.Text = "Открыть текст";
-            this.открытьТекстToolStripMenuItem.Click += new System.EventHandler(this.открытьТекстToolStripMenuItem_Click);
-            // 
             // открытьСловарьToolStripMenuItem
             // 
             this.открытьСловарьToolStripMenuItem.Name = "открытьСловарьToolStripMenuItem";
-            this.открытьСловарьToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.открытьСловарьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.открытьСловарьToolStripMenuItem.Text = "Открыть словарь";
             this.открытьСловарьToolStripMenuItem.Click += new System.EventHandler(this.открытьСловарьToolStripMenuItem_Click);
             // 
@@ -176,7 +167,6 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem открытьТекстToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьСловарьToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.StatusStrip statusStrip1;
