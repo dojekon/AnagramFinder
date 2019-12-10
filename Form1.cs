@@ -12,9 +12,9 @@ using System.IO;
 
 namespace AnagramFinder {
     public partial class Form1 : Form {
-        private string dicFile;
-        List<string> sourceWords;
-        Dictionary<int, string> Dic = new Dictionary<int, string>();
+        private string dicFile; // Содержимое словаря
+        List<string> sourceWords; // Список исходных слов
+        Dictionary<int, string> Dic = new Dictionary<int, string>(); // Словарь для поиска
         public Form1() {
             InitializeComponent();
         }
@@ -40,6 +40,7 @@ namespace AnagramFinder {
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) {
+            if (dicFile == null) throw new Exception("Словарь не обнаружен. Не забудьте открыть словарь");
             sourceWords = new List<string>(textBox1.Lines); // Заполняем список строками из textBox
             string[] words = dicFile.Split('\n'); //Разделяем строки
             int i = 0; // Счётчик ключей
@@ -61,7 +62,7 @@ namespace AnagramFinder {
                     textBox2.Text += word + " = ";
                     foreach (int WordKey in keys)
                         textBox2.Text += Dic[WordKey] + "; ";
-                    textBox2.Text += "\n";
+                    textBox2.Text += Environment.NewLine;
                 }
 
             }
