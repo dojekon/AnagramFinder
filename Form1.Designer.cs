@@ -28,14 +28,14 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.открытьТекстToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьСловарьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(794, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -62,22 +62,32 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(59, 28);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(59, 24);
             this.toolStripDropDownButton1.Text = "Файл";
             // 
             // открытьТекстToolStripMenuItem
             // 
             this.открытьТекстToolStripMenuItem.Name = "открытьТекстToolStripMenuItem";
-            this.открытьТекстToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.открытьТекстToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.открытьТекстToolStripMenuItem.Text = "Открыть текст";
             this.открытьТекстToolStripMenuItem.Click += new System.EventHandler(this.открытьТекстToolStripMenuItem_Click);
             // 
             // открытьСловарьToolStripMenuItem
             // 
             this.открытьСловарьToolStripMenuItem.Name = "открытьСловарьToolStripMenuItem";
-            this.открытьСловарьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.открытьСловарьToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.открытьСловарьToolStripMenuItem.Text = "Открыть словарь";
             this.открытьСловарьToolStripMenuItem.Click += new System.EventHandler(this.открытьСловарьToolStripMenuItem_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(56, 24);
+            this.toolStripButton1.Text = "Найти";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // statusStrip1
             // 
@@ -89,6 +99,12 @@
             this.statusStrip1.Size = new System.Drawing.Size(794, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(13, 20);
+            this.toolStripStatusLabel1.Text = " ";
             // 
             // textBox1
             // 
@@ -129,24 +145,9 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Найденные анаграммы";
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(56, 24);
-            this.toolStripButton1.Text = "Найти";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(13, 20);
-            this.toolStripStatusLabel1.Text = " ";
             // 
             // Form1
             // 
@@ -160,6 +161,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Поисковик анаграмм";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
