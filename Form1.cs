@@ -15,6 +15,7 @@ namespace AnagramFinder {
         private string dicFile; // Содержимое словаря
         List<string> sourceWords; // Список исходных слов
         Dictionary<int, string> Dic = new Dictionary<int, string>(); // Словарь для поиска
+        public static string filename;
         public Form1() {
             InitializeComponent();
         }
@@ -32,7 +33,7 @@ namespace AnagramFinder {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             // получаем выбранный файл
-            string filename = openFileDialog1.FileName;
+            filename = openFileDialog1.FileName;
             // читаем файл в строку
             dicFile = System.IO.File.ReadAllText(filename, Encoding.Default);
             int k = dicFile.Split('\n').Count();
@@ -67,6 +68,11 @@ namespace AnagramFinder {
 
             }
 
+        }
+
+        private void редактироватьСловарьToolStripMenuItem_Click(object sender, EventArgs e) {
+            DictEdit dictEdit = new DictEdit();
+            dictEdit.ShowDialog();
         }
     }
 }
