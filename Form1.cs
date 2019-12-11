@@ -16,6 +16,7 @@ namespace AnagramFinder {
         List<string> sourceWords; // Список исходных слов
         Dictionary<int, string> Dic = new Dictionary<int, string>(); // Словарь для поиска
         public static string filename;
+        public static bool dark = false;
         public Form1() {
             InitializeComponent();
         }
@@ -102,6 +103,7 @@ namespace AnagramFinder {
         }
 
         private void тёмнаяToolStripMenuItem_Click(object sender, EventArgs e) {
+            dark = true;
             this.BackColor = Color.FromArgb(22, 26, 33);
             label1.ForeColor = Color.White;
             label2.ForeColor = Color.White;
@@ -116,6 +118,7 @@ namespace AnagramFinder {
         }
 
         private void светлаяToolStripMenuItem_Click(object sender, EventArgs e) {
+            dark = false;
             this.BackColor = SystemColors.Control;
             label1.ForeColor = SystemColors.ControlText;
             label2.ForeColor = SystemColors.ControlText;
