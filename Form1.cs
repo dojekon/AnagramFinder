@@ -35,19 +35,20 @@ namespace AnagramFinder {
             // получаем выбранный файл
             filename = openFileDialog1.FileName;
             // читаем файл в строку
-            dicFile = System.IO.File.ReadAllText(filename, Encoding.Default);
+            dicFile = System.IO.File.ReadAllText(filename, Encoding.UTF8);
             int k = dicFile.Split('\n').Count();
             toolStripStatusLabel1.Text = "Объём словаря: " + k.ToString();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) {
             if (dicFile == null) throw new Exception("Словарь не обнаружен. Не забудьте открыть словарь");
+            textBox2.Text = "";
             sourceWords = new List<string>(textBox1.Lines); // Заполняем список строками из textBox
             string[] words = dicFile.Split('\n'); //Разделяем строки
             int i = 0; // Счётчик ключей
             foreach (string s in words) { // Заполняем словарь словами из файла
                 string temp = s.Trim('\r');
-                Dic.Add(i, temp); 
+                Dic.Add(i, temp);
                 i++;
             }
             List<int> keys = new List<int>(); // Создаём список ключей слов, являющихся анаграммами
@@ -64,15 +65,25 @@ namespace AnagramFinder {
                     foreach (int WordKey in keys)
                         textBox2.Text += Dic[WordKey] + "; ";
                     textBox2.Text += Environment.NewLine;
-                }
-
+                }        
             }
-
+            Dic.Clear();
+            sourceWords.Clear();
         }
 
         private void редактироватьСловарьToolStripMenuItem_Click(object sender, EventArgs e) {
             DictEdit dictEdit = new DictEdit();
             dictEdit.ShowDialog();
+        }
+
+        private void сохранитьРезультатToolStripMenuItem_Click(object sender, EventArgs e) {
+            saveFileDialog1.Filter = "Текстовый документ (*.txt)|*.txt|Все файлы (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+                StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName);
+                streamWriter.WriteLine(textBox2.Text);
+                streamWriter.Close();
+            }
         }
     }
 }
