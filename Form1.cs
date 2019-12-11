@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using System.Drawing.Printing;
 
 namespace AnagramFinder {
     public partial class Form1 : Form {
@@ -84,6 +84,49 @@ namespace AnagramFinder {
                 streamWriter.WriteLine(textBox2.Text);
                 streamWriter.Close();
             }
+        }
+
+        void PrintPageHandler(object sender, PrintPageEventArgs e) {
+            e.Graphics.DrawString(textBox2.Text, new Font("Arial", 14), Brushes.Black, 0, 0);
+        }
+
+        private void печатьРезультатаToolStripMenuItem_Click(object sender, EventArgs e) {
+            
+            PrintDocument printDocument = new PrintDocument(); // объект для печати
+            printDocument.PrintPage += PrintPageHandler; // обработчик события печати
+            PrintDialog printDialog = new PrintDialog(); // диалог настройки печати
+            printDialog.Document = printDocument;// установка объекта печати для его настройки
+            
+            if (printDialog.ShowDialog() == DialogResult.OK) // если в диалоге было нажато ОК
+                printDialog.Document.Print(); // печатаем
+        }
+
+        private void тёмнаяToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.BackColor = Color.FromArgb(22, 26, 33);
+            label1.ForeColor = Color.White;
+            label2.ForeColor = Color.White;
+            textBox1.BackColor = Color.FromArgb(28, 36, 47);
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.ForeColor = Color.White;
+            textBox2.BackColor = Color.FromArgb(28, 36, 47);
+            textBox2.BorderStyle = BorderStyle.FixedSingle;
+            textBox2.ForeColor = Color.White;
+            statusStrip1.BackColor = Color.FromArgb(28, 36, 47);
+            statusStrip1.ForeColor = Color.White;
+        }
+
+        private void светлаяToolStripMenuItem_Click(object sender, EventArgs e) {
+            this.BackColor = SystemColors.Control;
+            label1.ForeColor = SystemColors.ControlText;
+            label2.ForeColor = SystemColors.ControlText;
+            textBox1.BackColor = SystemColors.Window;
+            textBox1.BorderStyle = BorderStyle.Fixed3D;
+            textBox1.ForeColor = SystemColors.ControlText;
+            textBox2.BackColor = SystemColors.ControlLight;
+            textBox2.BorderStyle = BorderStyle.Fixed3D;
+            textBox2.ForeColor = SystemColors.ControlText;
+            statusStrip1.BackColor = SystemColors.Control;
+            statusStrip1.ForeColor = SystemColors.ControlText;
         }
     }
 }
