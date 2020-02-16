@@ -44,7 +44,7 @@ namespace AnagramFinder {
         private void toolStripButton1_Click(object sender, EventArgs e) {
             if (dicFile == null) throw new Exception("Словарь не обнаружен. Не забудьте открыть словарь");
             textBox2.Text = "";
-            sourceWords = new List<string>(textBox1.Lines); // Заполняем список строками из textBox
+            sourceWords = new List<string>(textBox1.Text.Split(new Char[] { ' ' })); // Заполняем список строками из textBox
             string[] words = dicFile.Split('\n'); //Разделяем строки
             int i = 0; // Счётчик ключей
             foreach (string s in words) { // Заполняем словарь словами из файла
